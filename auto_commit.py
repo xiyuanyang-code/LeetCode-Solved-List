@@ -70,7 +70,7 @@ def generate_message(file_path: str) -> str:
         (".md", ".txt", ".rst"): ("docs", "Update documentation/README"),
         (".py", ".sh", ".go", ".java", ".c", ".cpp", ".js", ".ts"): (
             "feat",
-            "Add new algorithms",
+            "Add new algorithms or scripts",
         ),
         (".html", ".css", ".scss", ".less"): ("style", "Adjust styles or layout"),
         (".png", ".jpg", ".jpeg", ".svg", ".gif"): (
@@ -132,6 +132,8 @@ def main():
             subprocess.run(["git", "commit", "-m", commit_message], check=True)
             print("\n✅ Auto-commit successful!")
             print(f"Commit Message: {commit_message}")
+            # push files into github
+            subprocess.run(["git", "push"], check=True)
         except subprocess.CalledProcessError as e:
             print(f"\n❌ Commit failed:\n{e.stderr}", file=sys.stderr)
             sys.exit(1)
