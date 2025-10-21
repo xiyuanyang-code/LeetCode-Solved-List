@@ -22,6 +22,9 @@ class Solution:
                 if (x_1, y_2) in points_hash and (x_2, y_1) in points_hash:
                     # the value for the rectangle
                     min_area = min(min_area, abs((x_1 - x_2)*(y_1 - y_2)))
+                    
+        if min_area == 1e10:
+            min_area = 0
         return min_area
         
 # @lc code=end
