@@ -1,4 +1,5 @@
 #!/bin/bash
+git add .
 PYTHON_SCRIPT="auto_commit.py"
 
 # Check if the Python script exists
